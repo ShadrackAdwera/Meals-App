@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   title: {
-    fontFamily: 'open-sans-bold',
+    //fontFamily: 'open-sans-bold',
     fontSize: 16,
     textAlign: 'right',
   },
