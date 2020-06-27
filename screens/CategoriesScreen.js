@@ -4,8 +4,8 @@ import { StyleSheet, FlatList } from 'react-native';
 import { CATEGORIES } from '../data/dummy-data';
 import CategoriesGridTile from '../components/CategoriesGridTile';
 
-const CategoriesScreen = () => {
-  const renderGridItem = () => {
+const CategoriesScreen = (props) => {
+  const renderGridItem = (itemData) => {
     return (
       <CategoriesGridTile
         title={itemData.item.title}

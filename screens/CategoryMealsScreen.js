@@ -1,28 +1,29 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
 
-import { CATEGORIES } from '../data/dummy-data';
-import { COLOR_PRIMARY } from '../shared/constants/color';
+import { CATEGORIES, MEALS } from '../data/dummy-data';
 
 const CategoryMealsScreen = (props) => {
+  const renderMealItem = (itemData) => {
+    return (
+      <View>
+        <Text>{itemData.item.title}</Text>
+      </View>
+    );
+  };
+
   const cId = props.navigation.getParam('categoryId');
-  const foundCategory = CATEGORIES.find((category) => {
-    return category.id === cId;
+
+  const displayMeals = MEALS.filter((meal) => {
+    return meal.categoryIds.indexOf(cId) >= 0;
   });
+
   return (
     <View style={styles.screen}>
-      <Text> {foundCategory.title} Screen</Text>
-      <Button
-        title="GO TO MEAL DETAIL"
-        onPress={() => {
-          props.navigation.navigate({ routeName: 'MealDetail' });
-        }}
-      />
-      <Button
-        title="GO BACC"
-        onPress={() => {
-          props.navigation.goBack();
-        }}
+      <FlatList
+        data={displayMeals}
+        keyExtractor={(item, index) => item.id}
+        renderItem={renderMealItem}
       />
     </View>
   );
@@ -34,7 +35,7 @@ CategoryMealsScreen.navigationOptions = (navData) => {
     return category.id === cId;
   });
   return {
-    headerTitle: foundCategory.title
+    headerTitle: foundCategory.title,
   };
 };
 
