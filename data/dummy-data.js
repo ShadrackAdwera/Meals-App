@@ -2,9 +2,9 @@ import Category from '../models/Category';
 import Meal from '../models/Meal';
 
 export const CATEGORIES = [
-  new Category('c1', 'Italian', '#000000'),
-  new Category('c2', 'Quick & Easy', '#000000'),
-  new Category('c3', 'Hamburgers', '#000000'),
+  new Category('c1', 'Italian Asf', '#000000'),
+  new Category('c2', 'Thicc & Easy', '#000000'),
+  new Category('c3', 'Burger', '#000000'),
   new Category('c4', 'German', '#000000'),
   new Category('c5', 'Light & Lovely', '#000000'),
   new Category('c6', 'Deez Nuts', '#000000'),
