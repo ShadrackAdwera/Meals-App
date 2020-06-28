@@ -26,7 +26,7 @@ MealDetail.navigationOptions = (navigationData) => {
     return {
         headerTitle: foundMeal.title,
         headerRight: () => <HeaderButtons HeaderButtonComponent={HeaderButton}>
-            <Item title='Favourite' iconName='ios-star-outline' onPress={()=>{}}/>
+            <Item title='Favourite' iconName='md-heart-empty' onPress={()=>{}}/>
         </HeaderButtons>
     } 
 }
