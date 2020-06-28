@@ -10,6 +10,7 @@ import MealDetailScreen from '../screens/MealDetailScreen';
 import FavouritesScreen from '../screens/FavouritesScreen';
 import { COLOR_PRIMARY, COLOR_ACCENT, COLOR_BLACK } from '../shared/constants/color';
 import { Platform } from 'react-native';
+import MealDetail from '../screens/MealDetailScreen';
 
 const MealsNav = createStackNavigator(
   {
@@ -32,6 +33,21 @@ const MealsNav = createStackNavigator(
   }
 );
 
+const FavNav = createStackNavigator({
+  Favourites: {
+    screen: FavouritesScreen
+  },
+  MealDetail : {
+    screen: MealDetailScreen
+  }
+}, {
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: COLOR_PRIMARY,
+    },
+  }
+})
+
 const tabScreenConfig = {
   Meals: {
     screen: MealsNav,
@@ -49,7 +65,7 @@ const tabScreenConfig = {
     },
   },
   Favourites: {
-    screen: FavouritesScreen,
+    screen: FavNav,
     navigationOptions: {
       tabBarIcon: (tabInfo) => {
         return (
