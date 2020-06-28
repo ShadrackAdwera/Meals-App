@@ -1,13 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import MealList from '../components/MealsList'
-import { MEALS } from '../data/dummy-data';
 import HeaderButton from '../components/HeaderButton';
 
 const FavouritesScreen = (props) => {
-    const faveMeals = MEALS.filter(meal=>meal.id === 'm4' || meal.id === 'm3')
+
+  const availableFaves = useSelector(state=>state.meal.favouriteMeals)
   return (
-    <MealList listData={faveMeals} navigation={props.navigation}/>
+    <MealList listData={availableFaves} navigation={props.navigation}/>
   );
 };
 
