@@ -114,7 +114,10 @@ const MainNavigator = createDrawerNavigator({
   Filters: FiltersNav
 }, {
   contentOptions: {
-    activeTintColor: COLOR_PRIMARY  
+    activeTintColor: COLOR_PRIMARY,
+    labelStyle: {
+      
+    }  
   }
 })
 
